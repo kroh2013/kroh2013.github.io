@@ -2,7 +2,7 @@
 <html>
     <head>
       <title>Introducing CSS</title>
-      <link href- "css example.css" type-title="text/css"
+      <link href= "css/example.css" type="text/css"
         rel="stylesheet" />
 
     </head>
@@ -71,7 +71,7 @@
 </html>
 
 body {
-    font-family: Calibri, Verdana, san-serif;}
+    font-family: Calibri, Verdana, sans-serif;}
 h1, h2 {
   color: #ee3e80;}
 p {
