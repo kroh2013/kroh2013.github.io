@@ -1,11 +1,14 @@
 <!doctype html>
 <html>
     <head>
-      <title>Images</title>
+      <title>Introducing CSS</title>
+      <link href- "css example.css" type-title="text/css"
+        rel="stylesheet" />
+
     </head>
     <body>
       <h1>
-       <img src="gold.jpg" alt="gold bar" width= "400" height="330" />
+       <img src="gold.jpg" alt="/gold bar" width= "400" height="330" />
 
         <p>Invest in yourself with quality gold pieces, never plated or filled. </p>
       </h1>
