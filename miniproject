@@ -67,5 +67,12 @@
   <p>Have a question about your gems?</p>
           <a href="https://www.gia.edu/">GIA</a>
 
-</body>
+   </body>
 </html>
+
+body {
+    font-family: Calibri, Verdana, san-serif;}
+h1, h2 {
+  color: #ee3e80;}
+p {
+  color: #665544:}
