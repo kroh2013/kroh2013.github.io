@@ -56,24 +56,6 @@
         </div>
             <img src="gold.jpg" alt="gold bar" width= "400" height="330" />
 
-            <script>
-            <i class="fa fa-shopping-bag" style="font-size:36px;"></i>
-            <p>Used on a button:</p>
-            <button style="font-size:24px">Button <i class="fa fa-shopping-bag"></i></button>
-            <p>Unicode:</p>
-            <i style="font-size:24px" class="fa">&#xf290;</i>
-
-            <h2>JavaScript HTML Events</h2>
-
-            <button onclick="displayDate()">The time is?</button>
-
-            function displayDate() {
-              document.getElementById("demo").innerHTML = Date();
-            }
-            </script>
-            <p id="demo"></p>
-
-
   <h2>About gold jewelry</h2>
     Yellow gold jewelery is still the most popular colour,
     "The process of alloying—mixing other metals with pure 24 carat
@@ -140,6 +122,13 @@
         <li> <a href= "https://www.gia.edu/">GIA</a></li>
       </ul>
     </div><! id--end of header-->
+
+    <script>
+     $("#time").click( function() {
+       $("p#timeanddate").toggle();
+     });
+  </script>
+  <p hidden id="timeanddate">
 
 
 
