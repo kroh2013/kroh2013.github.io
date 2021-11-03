@@ -45,6 +45,18 @@
             line-height: 1.4cm;
             color: #ac9d5f;}
         </style>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <p><button id="Care">tips on caring for your gold.</button></p>
+
+        <script>
+         $("#care").click( function() {
+           $("p#care_p").toggle();
+         });
+      </script>
+      <p hidden id="care">
+
+
     </head>
       <body>
         <h1>The Gold Source</h1>
@@ -100,7 +112,7 @@
         </tr>
       </table>
 
-    <div id= "divbox">  
+    <div id= "divbox">
       <div id="care" class="container">
         <h4 class="header">How to care for your gold</h4>
 
