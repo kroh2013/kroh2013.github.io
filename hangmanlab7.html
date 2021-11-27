@@ -20,10 +20,19 @@
         var finished = false; // change to true when the game is finished
 
       $("#guesses").html(guesses);
-      $("#word").html(blanks); 
+      $("#word").html(blanks);
+
+      $(".letter").click(function(e) {
+          // run this when a letter is clicked
+          var letter =  $(e.target).text();
+          console.log("clicked on", letter);
+
 
 
       });
+
+
+    });
 
   </script>
 </head>
