@@ -27,6 +27,17 @@
           var letter =  $(e.target).text();
           console.log("clicked on", letter);
 
+          // check the letter in the word to see if there is a match
+          var count = 0; {
+            if (l == letter) {
+              blanks = blanks.substring(0, count) + letter +
+                       blanks.substring((count + 1)), blanks.length);
+             }
+             count = count + 1;
+          }
+          // update the blanks
+          $("word").html(blanks);
+
 
 
       });
