@@ -24,16 +24,35 @@
 
       $(".letter").click(function(e) {
           // run this when a letter is clicked
-
-          // stop the function if the game is over
-          if (finished) { return; }
-
-          // get the letter
           var letter =  $(e.target).text();
           console.log("clicked on ", letter);
 
           // change the text decoration for the letter
           $("#"+letter).css("text-decoration" , "line-through");
+
+          // check the letter in the word to see if there is a match
+          var count = 0;
+          for (l of word) {
+            if (l == letter) {
+              blanks = blanks.substring(0, count) + letter +
+                       blanks.substring((count + 1)), blanks.length);
+            }
+             count = count + 1;
+          }
+          // update the blanks
+          $("word").html(blanks);
+
+          // check if we've won
+          if (! blanks.includes("-")) {
+            finished = true;
+            $("#messages").text("You won!");
+          }
+          // stop the function if the game is over
+          if (finished) { return; }
+
+          // get the letter
+
+
 
           // check if the letter has already been guessed
           if (guessed.includes(letter)) {
@@ -50,26 +69,9 @@
             }
           }
 
-          // check the letter in the word to see if there is a match
-          var count = 0;
-          for (l of word) {
-            if (l == letter) {
-              blanks = blanks.substring(0, count) + letter +
-                       blanks.substring((count + 1)), blanks.length);
-             }
-             count = count + 1;
-
-          // update the blanks
-          $("word").html(blanks);
-
-          // check if we've won
-          if (! blanks.includes("-")) {
-            finished = true;
-            $("#messages").text("You won!");
-          }
 
 
-
+  
       });
 
     });
