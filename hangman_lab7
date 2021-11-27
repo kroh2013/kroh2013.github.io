@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hangman!</title>
+  <style>
+     p { font-size: 24pt;}
+     #game { width: 50%; margin: auto; }
+     #messages { color: red; }
+  </style>
+  <script src= "https://ajax.googlepis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+        // $(document) is the jQuery reference to the whole web page
+        $(document).ready( function() {
+          // put your javascript here
+          var word = "b o b a f e t t"; // the word to guess
+          var blanks = "- - - - - - - -"; // this variable holds the temporary information
+          var guesses = 10; // the number of guesses left
+          var guessed = []; // these are the letters that have already been guessed
+          var finishsed = false; // change to true when the game is finished
+        }
