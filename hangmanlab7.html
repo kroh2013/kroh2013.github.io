@@ -5,6 +5,7 @@
   <style>
      p { font-size: 24pt;}
      #game { width: 50%; margin: auto; }
+     #messages { color: blue; }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
@@ -18,13 +19,16 @@
         var guessed  = []; // these are the letters that have already been guessed
         var finished = false; // change to true when the game is finished
 
+      $("#guesses").html(guesses);
+      $("#word").html(blanks); 
+
 
       });
 
   </script>
 </head>
 <body>
-  <div id="game">
+  <div id="game"
   <p>The word to guess is <b><span id="word"></span></b>.</p>
   <p>There are <span id="guesses"></span> guesses left.</p>
   <p><i>Click on a letter below to play.</i></p>
