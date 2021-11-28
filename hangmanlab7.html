@@ -38,13 +38,13 @@
           if (guessed.includes(letter)) {
             $("#messages").tex("The letter "+letter + " has already been guessed.");
           } else {
-            // ad the letter to array of guessed
+            // add the letter to array of guessed
             guessed = guessed + letter;
             // subtract a guess
             guesses = guesses -1;
             $("#guesses").html(guesses);
             if (guesses <= 0) {
-              $("#messages").text("Out of guesses! You lose!");
+              $("#messages").text("Out of guesses! You Lose!");
               finished = true;
             }
           }
@@ -66,17 +66,20 @@
             finished = true;
             $("#messages").text("You won!");
           }
-          // stop the function if the game is over
 
-  
+
+
       });
 
     });
 
   </script>
+  <style>
+      #game { width: 50%; margin: auto: }
+  </style>
 </head>
 <body>
-  <div id="game"
+  <div id="game">
   <p>The word to guess is <b><span id="word"></span></b>.</p>
   <p>There are <span id="guesses"></span> guesses left.</p>
   <p><i>Click on a letter below to play.</i></p>
@@ -112,3 +115,4 @@
 </div>
 
 </body>
+</html>
