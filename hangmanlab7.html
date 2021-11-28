@@ -33,7 +33,7 @@
 
           // check if the letter has already been guessed
           if (guessed.includes(letter)) {
-            $("#messages").tex("The letter "+letter + " has already been guessed.");
+            $("#messages").text("The letter "+letter + " has already been guessed.");
           } else {
             // add the letter to array of guessed
             guessed = guessed + letter;
