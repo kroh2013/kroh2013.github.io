@@ -24,8 +24,8 @@
 
       $(".letter").click(function(e) {
           // run this when a letter is clicked
-          var letter =  $(e.target).text();
           if (finished) { return; }
+          var letter =  $(e.target).text();
           console.log("clicked on ", letter);
 
           // change the text decoration for the letter
