@@ -19,19 +19,14 @@
         var guessed  = []; // these are the letters that have already been guessed
         var finished = false; // change to true when the game is finished
 
-
-
       $("#guesses").html(guesses);
       $("#word").html(blanks);
 
       $(".letter").click(function(e) {
           // run this when a letter is clicked
-
           var letter =  $(e.target).text();
           if (finished) { return; }
-
           console.log("clicked on ", letter);
-          // get the letter
 
           // change the text decoration for the letter
           $("#"+letter).css("text-decoration", "line-through");
