@@ -32,11 +32,7 @@
           console.log("clicked on ", letter);
 
           // change the text decoration for the letter
-           //$("#"+letter).css("text-decoration", "line-through");
-           $("#"+letter).ready(function(){
-           $("p").click(function(){
-           $(".letter").hide();
-        });
+           $("#"+letter).css("text-decoration", "line-through");
 
           // check if the letter has already been guessed
           if (guessed.includes(letter)) {
