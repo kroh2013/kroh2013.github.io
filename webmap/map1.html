@@ -1,0 +1,39 @@
+<<!DOCTYPE html>
+
+<<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Leaf Jet Map</title>
+  <!--External style sheets-->
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/s
+  MZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+
+</head>
+
+<body>
+  <div id="map" style="width: 705px; height: 375px"></div>
+
+  <script>
+	// Create variable to hold map element, give initial settings to map
+	var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 14});
+
+  // Add OpenStreetMap tile layer to map element
+var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                      { attribution: '© OpenStreetMap' }).addTo(map);
+
+  </script>
+
+
+
+</body>
+<!-- Add the Leaflet JavaScript library -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaV
+UearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+</html>
