@@ -15,22 +15,29 @@
 
 <body>
 
-  <!-- Add the Leaflet JavaScript library -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaV
-  UearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <div id="map" style="width: 705px; height: 375px"></div>
 
-  <div id="map" style="width: 705px; height: 375px"></div>
+<script>
 
-  <script>
-	// Create variable to hold map element, give initial settings to map
+  // Create variable to hold map element, give initial settings to map
 	var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 14});
 
   // Add OpenStreetMap tile layer to map element
 var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                       { attribution: '© OpenStreetMap' }).addTo(map);
 
-  </script>
+  <!-- Add the Leaflet JavaScript library -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaV
+  UearIOBhiXZ5V3ynxwA==" crossorigin="">
+
+</script>
+
+
+
+
+
+
 
 </body>
 
