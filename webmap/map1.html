@@ -47,12 +47,13 @@ var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
         	.setLatLng(e.latlng)
         	.setContent("You clicked the map at " + e.latlng.toString())
         	.openOn(map);
+          console.log("Clicked on the map");
     }
 
         // Listen for a click event on the Map element
         map.on('click', onMapClick);
 
-        
+
 
 
 
