@@ -25,6 +25,15 @@
 var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                       { attribution: '© OpenStreetMap' }).addTo(map);
 
+// Create point feature for Auraria Library
+var myDataPoint = L.marker([39.743119, -105.002959]).addTo(map);
+
+// Create area feature for campus, style and add to map
+var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
+	                     [39.748473, -105.002487], [39.740283, -104.999037]],
+                       {color: 'blue', weight: 4}).addTo(map);
+
+
 </script>
 
 
