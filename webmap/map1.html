@@ -33,6 +33,13 @@ var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
 	                     [39.748473, -105.002487], [39.740283, -104.999037]],
                        {color: 'blue', weight: 4}).addTo(map);
 
+       // Bind popup to Data Point object
+      myDataPoint.bindPopup("This is Auraria Library.");
+      // Bind popup to area object
+      myArea.bindPopup("Auraria Campus");
+
+
+
 
 </script>
 
