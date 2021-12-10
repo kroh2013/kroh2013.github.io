@@ -54,7 +54,16 @@ $(document).ready( function() {
           // load GeoJSON from an external file
           $.getJSON("buildings.json",function(data){
 	         // add GeoJSON layer to the map once the file is loaded
-	        L.geoJson(data).addTo(map);
+           buildings = L.geoJson(data,{
+               L.geoJson(data), {
+             onEachFeature: function (feature, layer) {
+            layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
+            "<br>Building Height: " +  feature.properties.BLDG_HEIGH +
+            "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
+        }
+      }
+    }          .addTo(map);
+    	}
 
         });
 
