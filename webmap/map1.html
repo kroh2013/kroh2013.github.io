@@ -43,7 +43,7 @@ $(document).ready( function() {
   var basemaps = { "Default Basemap:": defaultBase, "Stamen Watercolor": Stamen_Watercolor };
   var overlays = { };
   var layerMenu = L.control.layers(basemaps,overlays).addTo(map);
-
+                  L.Control.geocoder().addTo(map);
 
 
 
@@ -94,7 +94,6 @@ $(document).ready( function() {
           // }).addTo(map); we no longer want data added to map. Instead,
           // we will add it to the dataset
 
-        L.Control.geocoder().addTo(map);
   });
 
 
