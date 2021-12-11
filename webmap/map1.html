@@ -23,6 +23,23 @@ $(document).ready( function() {
   var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                         { attribution: '© OpenStreetMap' }).addTo(map);
 
+  // watercolor stamen tile Map
+  var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	     subdomains: 'abcd',
+	     minZoom: 1,
+	     maxZoom: 16,
+	     ext: 'jpg'
+});
+
+
+  var basemaps = { "Default Basemap:", defaultBase,
+                    "Stamen Watercolor": Stamen_Watercolor };
+  var overlaymaps = { };
+  var layerMenu = L.control.layers(basemaps,overlapmaps).addTo(map);
+
+
+
   // Create point feature for Auraria Library
   var myDataPoint = L.marker([39.743119, -105.002959]).addTo(map);
 
@@ -30,6 +47,8 @@ $(document).ready( function() {
   var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
   	                     [39.748473, -105.002487], [39.740283, -104.999037]],
                          {color: 'blue', weight: 4}).addTo(map);
+  layerMenu.addOverlay(myArea, "Auraria Campus");
+  layerMenu.addOverlay(myDataPoint, "Auraria Library");
 
          // Bind popup to Data Point object
         myDataPoint.bindPopup("This is Auraria Library.");
@@ -51,6 +70,7 @@ $(document).ready( function() {
           // Listen for a click event on the Map element
           map.on('click', onMapClick);
 
+          var buildings;
           // load GeoJSON from an external file
           $.getJSON("buildings.json",function(data){
 	         // add GeoJSON layer to the map once the file is loaded
@@ -60,9 +80,11 @@ $(document).ready( function() {
                 "<br>Building Height: " +  feature.properties.BLDG_HEIGH +
                 "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
             }
-          }).addTo(map);
-
-
+          }
+      );
+      layerMenu.addOverlay(buildings, "Buildings");
+          // }).addTo(map); we no longer want data added to map. Instead,
+          // we will add it to the dataset
   });
 
 
@@ -84,7 +106,7 @@ $(document).ready( function() {
         #map { height: 80%; width: 95%; }
         #map-title { width: 100%; }
       </style>
-      
+
 
 
 
