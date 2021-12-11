@@ -33,8 +33,11 @@ $(document).ready( function() {
 });
 
   var basemaps = { "Default Basemap:": defaultBase, "Stamen Watercolor": Stamen_Watercolor };
-  var overlaymaps = { };
-  var layerMenu = L.control.layers(basemaps,overlaymaps).addTo(map);
+  var overlays = { };
+  var layerMenu = L.control.layers(basemaps,overlays).addTo(map);
+
+
+
 
 
   // Create point feature for Auraria Library
