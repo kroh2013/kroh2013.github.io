@@ -10,6 +10,8 @@
   <!-- Add the Leaflet JavaScript library -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 <script>
 
   // wait for the page to load before running the javascript
@@ -22,6 +24,12 @@ $(document).ready( function() {
     // Add OpenStreetMap tile layer to map element
   var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                         { attribution: '© OpenStreetMap' }).addTo(map);
+
+  var map = L.map('map').setView([0, 0], 2);
+  L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
 
   // watercolor stamen tile Map
   var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
@@ -85,6 +93,8 @@ $(document).ready( function() {
       layerMenu.addOverlay(buildings, "Buildings");
           // }).addTo(map); we no longer want data added to map. Instead,
           // we will add it to the dataset
+
+        L.Control.geocoder().addTo(map);
   });
 
 
