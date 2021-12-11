@@ -25,9 +25,7 @@ $(document).ready( function() {
     // Add OpenStreetMap tile layer to map element
   var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                         { attribution: '© OpenStreetMap' }).addTo(map);
-
-
-
+                    L.Control.geocoder().addTo(map);
 
   // watercolor stamen tile Map
   var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
@@ -41,7 +39,7 @@ $(document).ready( function() {
   var basemaps = { "Default Basemap:": defaultBase, "Stamen Watercolor": Stamen_Watercolor };
   var overlays = { };
   var layerMenu = L.control.layers(basemaps,overlays).addTo(map);
-                  L.Control.geocoder().addTo(map);
+
 
 
 
